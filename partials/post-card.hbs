@@ -1,0 +1,11 @@
+<article class="post-card">
+  <a class="post-card-link" href="{{url}}">
+    {{#if feature_image}}
+      <div class="post-card-image" style="background-image: url({{feature_image}});"></div>
+    {{/if}}
+    <div class="post-card-content">
+      <h2 class="title">{{title}}</h2>
+      <p class="date">{{date format="MMMM D, YYYY"}}</p>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Montserrat:400,600|Stint+Ultra+Expanded');
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+body {
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  padding: 0;
+  background-color: #FCFCFC;
+  color: #303030;
+  font-family: "Bitter", Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+body.loading {
+  opacity: 0;
+}
+
+p {}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1 { color: #303030; font-size: 2.4em; letter-spacing: -0.05em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
+h2 { color: #303030; font-size: 2.0em; letter-spacing: 0em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
+h3 { color: #303030; font-size: 1.8em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h4 { color: #303030; font-size: 1.4em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h5 { color: #606060; font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h6 { color: #606060; font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+
+@media screen and (max-width: 769px) {
+  h1 { font-size: 2.0em; line-height: 1.0; margin: 1em 0 0.6em 0; }
+  h2 { font-size: 1.6em; line-height: 1.0; margin: 1em 0 0.6em 0; }
+  h3 { font-size: 1.4em; line-height: 1.0; margin: 0.8em 0 0.4em 0; }
+  h4 { font-size: 1.2em; line-height: 1.0; margin: 0.8em 0 0.4em 0; }
+  h5 { font-size: 1.1em; line-height: 1.0; margin: 0.8em 0 0.4em 0; }
+  h6 { font-size: 1.1em; line-height: 1.0; margin: 0.8em 0 0.4em 0; }
+}
+
+ul,ol {}
+ul {
+  list-style-type: none;
+}
+li:not(.nav-item) {
+  margin-bottom: 4px;
+}
+
+a:not(.button),
+a:not(.button):visited {
+  text-decoration: none;
+  color: #2DE887;
+  transition: all 0.2s;
+}
+a:not(.button):hover,
+a:not(.button):active {
+  text-decoration: none;
+  color: #2DE887;
+}
+
+.hidden {
+  display: none !important;
+}
+.transparent {
+  opacity: 0;
+}
+.opaque {
+  opacity: 1;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.flex-row {
+  display: flex;
+  flex-flow: row;
+}
+.flex-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.flex-grow {
+  flex: 1 0 auto;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  background: rgb(31, 58, 86, 0.5);
+  color: #202028;
+  z-index: 1000;
+}
+header>nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: transparent;
+  transition: all 0.4s;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #FCFCFC;
+}
+header>nav #brand {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+header>nav #primary-nav {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+header>nav>ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: transparent;
+}
+header>nav>ul.left {
+  display: inline-block;
+}
+header>nav>ul>li {
+  display: inline-block;
+  margin: 0;
+}
+header>nav>ul>li a,
+header>nav>ul>li button {
+  color: #FCFCFC !important;
+  display: inline-block;
+  padding: 0 24px;
+  line-height: 48px;
+  border: none;
+  transition: all 0.2s;
+  margin-top: 6px;
+  border-bottom: 2px solid transparent;
+}
+header>nav>ul>li a:active,
+header>nav>ul>li a:hover,
+header>nav>ul>li a:visited {
+  color: #FCFCFC !important;
+}
+header>nav>ul>li a:hover:not(.toggle-menu) {
+  text-decoration: none;
+  border-bottom: 2px solid #FCFCFC;
+}
+header>nav>ul>li a.toggle-menu {
+  cursor: pointer;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background: #FCFCFC;
+}
+main.blog,
+main.page,
+main.post {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+@media (min-width: 1200px) {
+  main.post .container {
+    max-width: 960px;
+  }
+}
+
+section.atf,
+section.fixed-image {
+  background-color: #5b5b5b;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-origin: border-box;
+  height: 100vh;
+  margin: 0;
+}
+section.fixed-image {
+  height: 420px;
+}
+@media only screen and (max-width: 769px) {
+  section.atf,
+  section.fixed-image {
+    background-attachment: scroll;
+  }
+}
+
+article h1,
+article h2 {
+  text-transform: uppercase;
+}
+article.post-card {
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 18px;
+  transition: box-shadow 0.12s ease-in;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  flex: 1 0;
+}
+article.post-card-placeholder {
+  flex: 0 0 31%;
+}
+article.post-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+article.post-card a.post-card-link {
+  position: relative;
+  overflow: hidden;
+  color: inherit;
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+article.post-card .post-card-image {
+  height: 120px;
+  border-radius: 4px 4px 0 0;
+  background-position: center;
+  background-size: cover;
+}
+article.post-card.large .post-card-image {
+  height: 240px;
+}
+article.post-card .title {
+  font-size: 1.0em;
+  margin: 0.2em 0;
+  text-align: center;
+}
+article.post-card .date {
+  font-size: 0.8em;
+  margin: 0.4em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+article.post-card .post-card-content {
+  border-radius: 4px;
+  padding: 16px 24px;
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+}
+article.post-card.large {
+  flex: 1 0 100%;
+}
+article.post-card.large .title {
+  font-size: 1.4em;
+  margin: 0.4em 0;
+  text-align: center;
+}
+article.post-card.large .date {
+  font-size: 0.8em;
+  margin: 0.4em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+article.post-card.large .post-card-content {
+  padding: 24px 36px;
+}
+
+article.post img {
+  display: block;
+  padding: 10px 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+article.post {
+  padding: 18px 24px;
+  border-radius: 4px;
+  background: #FCFCFC;
+}
+article.post p {
+  line-height: 1.8;
+}
+
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}

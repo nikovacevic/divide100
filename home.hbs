@@ -1,0 +1,25 @@
+{{!< default}} <main class="index">
+  {{#if @blog.cover_image}}
+  <section class="atf" style="background-image: url({{@blog.cover_image}});"></section>
+  {{/if}}
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p>{{@blog.description}}</p>
+          {{#get "posts" slug="home" as |post|}}
+          {{#if post}}
+          {{#post}}
+          <hr style="margin: 36px 0;" />
+          <div class="home-content">
+            {{content}}
+          </div>
+          {{/post}}
+          {{/if}}
+          {{/get}}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="fixed-image" style="background-image: url('{{asset "images/home/train.jpg"}}');"></section>
+  </main>
