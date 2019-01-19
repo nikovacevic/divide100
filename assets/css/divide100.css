@@ -150,7 +150,6 @@ header>nav>ul>li button {
   line-height: 60px;
   border: none;
   transition: all 0.2s;
-  /* font-weight: 700; */
 }
 header>nav>ul>li a:active,
 header>nav>ul>li a:hover,
@@ -247,9 +246,6 @@ section.atf .atf-content {
   text-align: center;
   color: #FCFCFC;
   text-shadow: 2px 2px 2px #000000;
-  background: rgba(31, 58, 86, 0.4);
-  border-radius: 4px;
-  padding-bottom: 46px;
 }
 section.atf nav.atf-nav {
   margin-top: 30px;
