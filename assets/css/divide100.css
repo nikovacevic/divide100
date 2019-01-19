@@ -104,7 +104,7 @@ header {
   background: linear-gradient(rgba(31, 58, 86, 0.75), 75%, rgba(31, 58, 86, 0));
   color: #202028;
   z-index: 1000;
-  transition: background 0.2s;
+  transition: background ease-in-out 0.2s;
 }
 header.scrolling {
   background: rgba(31, 58, 86, 0.80);
@@ -160,7 +160,7 @@ header>nav>ul>li a:hover,
 header>nav>ul>li a:visited {
   color: #FCFCFC !important;
 }
-header>nav>ul>li a:hover {
+header>nav>ul>li a:not(.toggle-menu):hover {
   background: rgba(31, 58, 86, 1);
   text-decoration: none;
 }
