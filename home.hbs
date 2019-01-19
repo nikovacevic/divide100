@@ -1,16 +1,25 @@
 {{!< default}} <main class="index">
   {{#if @blog.cover_image}}
-  <section class="atf" style="background-image: url({{@blog.cover_image}});"></section>
+  <section class="atf" style="background-image: url({{@blog.cover_image}});">
+    <div class="atf-container">
+      <div class="atf-content">
+        <h1>DIVIDE 100</h1>
+        <h4>{{@blog.description}}</h4>
+        <nav class="atf-nav">
+          <a class="btn" href="/course"><span class="btn-accent">Check out the</span>Course</a>
+          <a class="btn" href="https://ultrasignup.com/"><span class="btn-accent">Ready to</span>Register</a>
+        </nav>
+      </div>
+    </div>
+  </section>
   {{/if}}
   <section>
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <p>{{@blog.description}}</p>
           {{#get "posts" slug="home" as |post|}}
           {{#if post}}
           {{#post}}
-          <hr style="margin: 36px 0;" />
           <div class="home-content">
             {{content}}
           </div>

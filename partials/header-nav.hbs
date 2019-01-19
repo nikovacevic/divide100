@@ -12,3 +12,9 @@
     <li class="nav-item"><a class="toggle-menu"><i class="fas fa-bars fa-lg"></i></a></li>
   </ul>
 </nav>
+<nav class="floating-nav hidden">
+  <ul>
+    {{#if @blog.navigation}}
+    {{navigation}}
+    {{/if}}
+</nav>

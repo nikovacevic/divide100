@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bitter|Montserrat:400,600|Stint+Ultra+Expanded');
+@import url('https://fonts.googleapis.com/css?family=Bitter|Montserrat:400,700|Stint+Ultra+Expanded');
 
 html {
   min-height: 100%;
@@ -23,17 +23,18 @@ body.loading {
   opacity: 0;
 }
 
-p {}
-
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-family: "Stint Ultra Expanded", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h2, h3, h4, h5, h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h1 { color: #303030; font-size: 2.4em; letter-spacing: -0.05em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
-h2 { color: #303030; font-size: 2.0em; letter-spacing: 0em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
-h3 { color: #303030; font-size: 1.8em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
-h4 { color: #303030; font-size: 1.4em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
-h5 { color: #606060; font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
-h6 { color: #606060; font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h1 { font-size: 2.4em; letter-spacing: -0.05em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
+h2 { font-size: 2.0em; letter-spacing: 0em; line-height: 1.2; margin: 1em 0 0.6em 0; font-weight: 600; }
+h3 { font-size: 1.8em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h4 { font-size: 1.4em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h5 { font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
+h6 { font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; margin: 0.8em 0 0.4em 0; }
 
 @media screen and (max-width: 769px) {
   h1 { font-size: 2.0em; line-height: 1.0; margin: 1em 0 0.6em 0; }
@@ -44,7 +45,6 @@ h6 { color: #606060; font-size: 1.2em; letter-spacing: 0em; line-height: 1.2; ma
   h6 { font-size: 1.1em; line-height: 1.0; margin: 0.8em 0 0.4em 0; }
 }
 
-ul,ol {}
 ul {
   list-style-type: none;
 }
@@ -52,16 +52,16 @@ li:not(.nav-item) {
   margin-bottom: 4px;
 }
 
-a:not(.button),
-a:not(.button):visited {
+a:not(.btn),
+a:not(.btn):visited {
   text-decoration: none;
-  color: #2DE887;
+  color: #7AA9D2;
   transition: all 0.2s;
 }
-a:not(.button):hover,
-a:not(.button):active {
+a:not(.btn):hover,
+a:not(.btn):active {
   text-decoration: none;
-  color: #2DE887;
+  color: #7AA9D2;
 }
 
 .hidden {
@@ -101,7 +101,7 @@ header {
   justify-content: center;
   position: fixed;
   width: 100%;
-  background: rgb(31, 58, 86, 0.5);
+  background: linear-gradient(rgb(31, 58, 86, 0.75), 75%, rgb(31, 58, 86, 0));
   color: #202028;
   z-index: 1000;
 }
@@ -118,9 +118,11 @@ header>nav {
   color: #FCFCFC;
 }
 header>nav #brand {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-family: "Stint Ultra Expanded", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   font-weight: 600;
+  letter-spacing: -0.04em;
 }
 header>nav #primary-nav {
   text-transform: uppercase;
@@ -145,23 +147,48 @@ header>nav>ul>li button {
   color: #FCFCFC !important;
   display: inline-block;
   padding: 0 24px;
-  line-height: 48px;
+  line-height: 60px;
   border: none;
   transition: all 0.2s;
-  margin-top: 6px;
-  border-bottom: 2px solid transparent;
+  /* font-weight: 700; */
 }
 header>nav>ul>li a:active,
 header>nav>ul>li a:hover,
 header>nav>ul>li a:visited {
   color: #FCFCFC !important;
 }
-header>nav>ul>li a:hover:not(.toggle-menu) {
+header>nav>ul>li a:hover {
+  background: rgb(31, 58, 86, 1);
   text-decoration: none;
-  border-bottom: 2px solid #FCFCFC;
 }
 header>nav>ul>li a.toggle-menu {
   cursor: pointer;
+}
+
+nav.floating-nav {
+  background: #FCFCFC;
+  padding: 6px 0;
+  position: fixed;
+  top: 60px;
+  right: 24px;
+  border-radius: 2px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+nav.floating-nav>ul>li.nav-item {
+  display: list-item;
+  width: 100%;
+}
+nav.floating-nav>ul>li.nav-item>a {
+  font-size: 0.8em;
+  width: 100%;
+  background: none;
+  color: rgb(31, 58, 86, 1) !important;
+  line-height: 45px;
+  font-weight: 700;
+}
+nav.floating-nav>ul>li.nav-item>a:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -185,7 +212,7 @@ main.post {
 
 section.atf,
 section.fixed-image {
-  background-color: #5b5b5b;
+  background-color: rgb(31, 58, 86, 0.75);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -193,6 +220,10 @@ section.fixed-image {
   background-origin: border-box;
   height: 100vh;
   margin: 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
 }
 section.fixed-image {
   height: 420px;
@@ -202,6 +233,71 @@ section.fixed-image {
   section.fixed-image {
     background-attachment: scroll;
   }
+}
+section.atf .atf-container {
+  flex: 0 1 480px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+section.atf .atf-content {
+  flex: 0 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #FCFCFC;
+  text-shadow: 2px 2px 2px #000000;
+  background: rgba(31, 58, 86, 0.4);
+  border-radius: 4px;
+  padding-bottom: 46px;
+}
+section.atf nav.atf-nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+section.atf nav.atf-nav a.btn {
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* background: rgb(31, 58, 86, 1);
+  color: #FCFCFC; */
+  color: rgb(31, 58, 86, 1);
+  background: #FCFCFC;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+section.atf nav.atf-nav a.btn:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.8);
+}
+section.atf nav.atf-nav span.btn-accent {
+  font-weight: 400;
+  display: block;
+  font-size: 50%;
+  padding-top: 4px;
+  letter-spacing: 0.1em;
+}
+
+nav.social-media {
+  margin: 20px 0;
+}
+nav.social-media a.nav-link {
+  padding: 2rem;
+  font-size: 1rem;
+}
+nav.social-media a.nav-link:hover {
+  color: rgb(31, 58, 86, 1);
+}
+
+.home-content {
+  margin: 30px 0;
+  padding: 30px;
+  text-align: justify;
+}
+.home-content p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
 }
 
 article h1,
@@ -301,4 +397,13 @@ footer {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+footer .copyright {
+  margin-bottom: 30px;
+}
+footer .copyright p {
+  text-align: center;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
 }

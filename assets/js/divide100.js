@@ -2,8 +2,7 @@ $(function () {
   UI = {};
   UI.viewportHeight = $(window).height();
   UI.viewportWidth = $(window).width();
-  UI.fullScreenNav = $("nav#full-screen-nav");
-  UI.headerNav = $("header>nav");
+  UI.floatingNav = $("nav.floating-nav");
 
   UI.init = function () {
     // Set ATF image
@@ -22,27 +21,16 @@ $(function () {
   }
 
   // Full-screen nav toggle
-  UI.toggleFullScreenNav = function (nav) {
-    nav.toggleClass('visible');
-    $("header").toggleClass('scrolling', !nav.hasClass('visible'));
+  UI.toggleFloatingNav = function (nav) {
+    nav.toggleClass('hidden');
   }
   $('.toggle-menu').click(function (e, ui) {
-    UI.toggleFullScreenNav(UI.fullScreenNav);
+    UI.toggleFloatingNav(UI.floatingNav);
   });
-
-  // Set nav scrolling state
-  $(window).scroll(function (e, ui) {
-    if ($(document).scrollTop() > 30) {
-      $('header').addClass('scrolling');
-    } else {
-      $('header').removeClass('scrolling');
-    }
-  });
-
-  // Collapse full-screen nav on navigation
-  UI.fullScreenNav.find('a').click(function (e, ui) {
-    UI.toggleFullScreenNav(UI.fullScreenNav);
-  });
+  $('body').click(function (e, ui) {
+    console.log(e);
+    // UI.toggleFloatingNav(UI.floatingNav);
+  })
 });
 
 $(document).ready(function () {
