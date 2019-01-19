@@ -101,9 +101,13 @@ header {
   justify-content: center;
   position: fixed;
   width: 100%;
-  background: linear-gradient(rgb(31, 58, 86, 0.75), 75%, rgb(31, 58, 86, 0));
+  background: linear-gradient(rgba(31, 58, 86, 0.75), 75%, rgba(31, 58, 86, 0));
   color: #202028;
   z-index: 1000;
+  transition: background 0.2s;
+}
+header.scrolling {
+  background: rgba(31, 58, 86, 0.80);
 }
 header>nav {
   flex: 1 1 auto;
@@ -157,7 +161,7 @@ header>nav>ul>li a:visited {
   color: #FCFCFC !important;
 }
 header>nav>ul>li a:hover {
-  background: rgb(31, 58, 86, 1);
+  background: rgba(31, 58, 86, 1);
   text-decoration: none;
 }
 header>nav>ul>li a.toggle-menu {
@@ -182,7 +186,7 @@ nav.floating-nav>ul>li.nav-item>a {
   font-size: 0.8em;
   width: 100%;
   background: none;
-  color: rgb(31, 58, 86, 1) !important;
+  color: rgba(31, 58, 86, 1) !important;
   line-height: 45px;
   font-weight: 700;
 }
@@ -211,7 +215,7 @@ main.post {
 
 section.atf,
 section.fixed-image {
-  background-color: rgb(31, 58, 86, 0.75);
+  background-color: rgba(31, 58, 86, 0.75);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -257,9 +261,7 @@ section.atf nav.atf-nav a.btn {
   text-transform: uppercase;
   font-weight: 700;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* background: rgb(31, 58, 86, 1);
-  color: #FCFCFC; */
-  color: rgb(31, 58, 86, 1);
+  color: rgba(31, 58, 86, 1) !important;
   background: #FCFCFC;
   padding: 0.8rem 1.6rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
@@ -283,7 +285,7 @@ nav.social-media a.nav-link {
   font-size: 1rem;
 }
 nav.social-media a.nav-link:hover {
-  color: rgb(31, 58, 86, 1);
+  color: rgba(31, 58, 86, 1);
 }
 
 .home-content {
