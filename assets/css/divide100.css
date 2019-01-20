@@ -204,7 +204,6 @@ main {
 main.blog,
 main.page,
 main.post {
-  padding-top: 60px;
   padding-bottom: 20px;
 }
 @media (min-width: 1200px) {

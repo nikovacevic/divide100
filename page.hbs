@@ -1,6 +1,21 @@
 {{!< default}} {{#post}} <main class="page">
   {{#page}}
-  <div class="container flex-grow">
+  {{#if feature_image}}
+  <figure class="post-full-image" style="
+        background-image: url({{feature_image}});
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+        width: 100vw;
+        margin: 0;">
+  </figure>
+  {{else}}
+  <div style="height: 100px;"></div>
+  {{/if}}
+  <div class="container" style="padding-left: 30px; padding-right: 30px;">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="container flex-grow" style="padding-left: 30px; padding-right: 30px;">
     {{content}}
   </div>
   {{/page}}
