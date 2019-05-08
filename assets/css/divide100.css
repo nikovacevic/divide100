@@ -297,6 +297,10 @@ nav.social-media a.nav-link:hover {
   line-height: 1.6rem;
 }
 
+img {
+  max-width: 100%;
+}
+
 article h1,
 article h2 {
   text-transform: uppercase;
